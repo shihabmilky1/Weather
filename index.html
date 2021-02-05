@@ -40,7 +40,7 @@
         document.getElementById('getInputValue').addEventListener('click', function () {
             const inputValue = document.getElementById('inputValue');
             const key = '25d8cace288ccfceb2879aaed065fe84'
-            fetch("http://api.openweathermap.org/data/2.5/weather?q="+inputValue.value+"&appid="+key)
+            fetch("https://api.openweathermap.org/data/2.5/weather?q="+inputValue.value+"&appid="+key)
                 .then(response => response.json())
                 .then(data => {
                     const temp = data.main['temp'];
