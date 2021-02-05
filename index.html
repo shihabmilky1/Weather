@@ -38,10 +38,10 @@
     <script>
 
         document.getElementById('getInputValue').addEventListener('click', function () {
-            fetch("http://api.openweathermap.org/data/2.5/weather?q="+inputValue+"&appid=598690fec00e6f84fea1c64d15ddc9bd")
+            const inputValue = document.getElementById('inputValue');
+            fetch("http://api.openweathermap.org/data/2.5/weather?q="+inputValue.value+"&appid=25d8cace288ccfceb2879aaed065fe84")
                 .then(response => response.json())
                 .then(data => {
-                    const inputValue = document.getElementById('inputValue').value;
                     const temp = data.main['temp'];
                     const kelvinToCelsius = temp - 273.15;
                     const city = data.name;
