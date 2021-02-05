@@ -39,7 +39,7 @@
 
         document.getElementById('getInputValue').addEventListener('click', function () {
             const inputValue = document.getElementById('inputValue').value;
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=598690fec00e6f84fea1c64d15ddc9bd`)
+            fetch("http://api.openweathermap.org/data/2.5/weather?q="+inputValue+"&appid=598690fec00e6f84fea1c64d15ddc9bd")
                 .then(response => response.json())
                 .then(data => {
                     const temp = data.main['temp'];
@@ -47,7 +47,7 @@
                     const city = data.name;
                     const lead = data.weather[0]['main'];
                     const icon = data.weather[0]['icon'];
-                    const weatherIcon = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+                    const weatherIcon = "http://openweathermap.org/img/wn/"+icon+"@2x.png";
                     document.getElementById('weather-icon').src = weatherIcon;
                     document.getElementById('cityTemp').innerText = Math.round(kelvinToCelsius);
                     document.getElementById('City').innerText = city;
